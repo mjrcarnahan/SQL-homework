@@ -1,0 +1,39 @@
+-- SELECT c.last_name, c.first_name, c.gender, c.emp_no, s.salary
+-- FROM "Employee_Characteristics" as c
+-- INNER JOIN "Salaries" as s ON
+-- c.emp_no = s.emp_no;
+
+-- SELECT last_name, first_name, emp_no, hire_date
+-- FROM "Employee_Characteristics" 
+-- WHERE (hire_date > '1986-01-01') AND (hire_date < '1986-12-31');
+
+-- SELECT d.dept_no, d.dept_name, m.from_date, m.to_date, c.first_name, c.last_name, m.emp_no
+-- FROM "Department" as d
+-- INNER JOIN "Department_Managers" as m ON
+-- d.dept_no = m.dept_no
+-- LEFT JOIN "Employee_Characteristics" as c ON
+-- c.emp_no = m.emp_no;
+
+-- SELECT d.dept_name, c.first_name, c.last_name, e.emp_no
+-- FROM "Department" as d
+-- INNER JOIN "Department_Employees" as e ON
+-- d.dept_no = e.dept_no
+-- LEFT JOIN "Employee_Characteristics" as c ON
+-- c.emp_no = e.emp_no;
+
+-- SELECT first_name, last_name 
+-- FROM "Employee_Characteristics" 
+-- WHERE first_name ='Hercules' AND last_name LIKE 'B%';
+
+-- SELECT d.dept_name, c.first_name, c.last_name, e.emp_no
+-- FROM "Department" as d
+-- INNER JOIN "Department_Employees" as e ON
+-- d.dept_no = e.dept_no
+-- LEFT JOIN "Employee_Characteristics" as c ON
+-- c.emp_no = e.emp_no
+-- WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development';
+
+-- SELECT last_name, COUNT(last_name) AS "# of emps w this l name"
+-- FROM "Employee_Characteristics"
+-- GROUP BY last_name
+-- ORDER BY "# of emps w this l name" DESC;
